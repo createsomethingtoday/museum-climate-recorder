@@ -1,0 +1,43 @@
+{
+  "platform": "macOS-27.2.1-arm64-arm-64bit",
+  "architecture": "arm64",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.4.1.1)",
+  "flags": [
+    "-std=c++17",
+    "-O3",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-pedantic"
+  ],
+  "source_sha256": {
+    "baseline": "8e5a1bb8988112e475ab3489256d6f39e08f34d4d6fee89f78375770430b1e74",
+    "bulk": "92a9c53db9fe91787378337f04bd5f9ee9ae62c97086890975366b951f2ceed5"
+  },
+  "records": 500000,
+  "fixture_sha256": "c0321f912edd9a10dc4af2b80c971409f242524555bfeda71dd9067bd18be31a",
+  "output_sha256": "9180ede2da039e2800af86c5daf1ff71cc773b2dfedff133c254b811cff850b1",
+  "seconds": {
+    "baseline": [
+      2.6372728330000004,
+      1.2868812500000004,
+      2.579744291999999,
+      1.662333167,
+      1.345194416,
+      2.575940792000001
+    ],
+    "bulk": [
+      0.03633554200000022,
+      0.029981041000000097,
+      0.031885457999999645,
+      0.03073225000000157,
+      0.03099091700000045,
+      0.04858604200000016
+    ]
+  },
+  "median_records_per_second": {
+    "baseline": 235945,
+    "bulk": 15904225
+  },
+  "speedup": 67.41
+}

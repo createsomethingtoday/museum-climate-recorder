@@ -1,0 +1,18 @@
+Linux 7.0.14-linuxkit aarch64
+c++ (GCC) 14.3.0
+Python 3.11.2
+173042 0 1
+PASS REC-1 first sample
+PASS REC-1 arbitrary start
+PASS REC-2 contiguous
+PASS REC-2 gap
+PASS REC-3 stale
+PASS REC-4 invalid
+PASS REC-2 wide gap
+PASS REC-1 first sample
+PASS REC-1 arbitrary start
+PASS REC-2 contiguous
+PASS REC-2 gap
+PASS REC-3 stale
+PASS REC-4 invalid
+PASS REC-2 wide gap

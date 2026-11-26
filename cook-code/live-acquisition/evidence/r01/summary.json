@@ -1,0 +1,29 @@
+{
+  "idle": {
+    "count": 500,
+    "p50_ns": 2333,
+    "p99_ns": 3041,
+    "max_ns": 4667,
+    "budget_ns": 1000000,
+    "misses": 0,
+    "maximum_sample_index": 409
+  },
+  "bulk": {
+    "count": 500,
+    "p50_ns": 2666,
+    "p99_ns": 5416,
+    "max_ns": 3556792,
+    "budget_ns": 1000000,
+    "misses": 2,
+    "maximum_sample_index": 223
+  },
+  "bulk_separate_cpu": {
+    "count": 500,
+    "p50_ns": 2334,
+    "p99_ns": 2667,
+    "max_ns": 12292,
+    "budget_ns": 1000000,
+    "misses": 0,
+    "maximum_sample_index": 0
+  }
+}

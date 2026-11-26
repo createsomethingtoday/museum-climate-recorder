@@ -1,0 +1,7 @@
+PASS REC-1 first sample
+PASS REC-1 arbitrary start
+PASS REC-2 contiguous
+PASS REC-2 gap
+PASS REC-3 stale
+PASS REC-4 invalid
+PASS REC-2 wide gap

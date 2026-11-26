@@ -1,0 +1,43 @@
+{
+  "platform": "Linux-7.0.14-linuxkit-aarch64-with-glibc2.36",
+  "architecture": "aarch64",
+  "compiler": "c++ (GCC) 14.3.0",
+  "flags": [
+    "-std=c++17",
+    "-O3",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-pedantic"
+  ],
+  "source_sha256": {
+    "baseline": "8e5a1bb8988112e475ab3489256d6f39e08f34d4d6fee89f78375770430b1e74",
+    "bulk": "92a9c53db9fe91787378337f04bd5f9ee9ae62c97086890975366b951f2ceed5"
+  },
+  "records": 500000,
+  "fixture_sha256": "c0321f912edd9a10dc4af2b80c971409f242524555bfeda71dd9067bd18be31a",
+  "output_sha256": "9180ede2da039e2800af86c5daf1ff71cc773b2dfedff133c254b811cff850b1",
+  "seconds": {
+    "baseline": [
+      0.21372345900000056,
+      0.21327883300000394,
+      0.21142820799999384,
+      0.212730999999998,
+      0.2146231249999957,
+      0.22509220900000315
+    ],
+    "bulk": [
+      0.013683750000005546,
+      0.012104749999998887,
+      0.011912707999996996,
+      0.012250125000001333,
+      0.012022375000000807,
+      0.01242354100000398
+    ]
+  },
+  "median_records_per_second": {
+    "baseline": 2341908,
+    "bulk": 41059541
+  },
+  "speedup": 17.53
+}
