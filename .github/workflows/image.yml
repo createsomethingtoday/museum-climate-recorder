@@ -1,5 +1,6 @@
 name: Publish ARM64 recorder
 on:
+  workflow_dispatch:
   push:
     tags: ['v*']
 permissions:
@@ -7,6 +8,8 @@ permissions:
   packages: write
 jobs:
   image:
+    env:
+      RELEASE_TAG: ${{ github.ref_type == 'tag' && github.ref_name || 'main' }}
     runs-on: ubuntu-24.04-arm
     steps:
       - uses: actions/checkout@v4
@@ -15,8 +18,8 @@ jobs:
           docker build --platform linux/arm64 -f delivery/Dockerfile \
             --label "org.opencontainers.image.source=$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" \
             --label "org.opencontainers.image.revision=$GITHUB_SHA" \
-            -t "ghcr.io/$GITHUB_REPOSITORY:${GITHUB_REF_NAME}" .
-          printf '7\n10\n10\n' | docker run --rm -i "ghcr.io/$GITHUB_REPOSITORY:${GITHUB_REF_NAME}" > actual
+            -t "ghcr.io/$GITHUB_REPOSITORY:${RELEASE_TAG}" .
+          printf '7\n10\n10\n' | docker run --rm -i "ghcr.io/$GITHUB_REPOSITORY:${RELEASE_TAG}" > actual
           printf 'accepted 7\nmissing 2\naccepted 10\nstale\n' | diff - actual
       - name: Publish the tested image
         env:
@@ -24,6 +27,6 @@ jobs:
         run: |
           printf '%s' "$GH_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
           image="ghcr.io/$GITHUB_REPOSITORY"
-          docker tag "$image:${GITHUB_REF_NAME}" "$image:latest"
-          docker push "$image:${GITHUB_REF_NAME}"
+          docker tag "$image:${RELEASE_TAG}" "$image:latest"
+          docker push "$image:${RELEASE_TAG}"
           docker push "$image:latest"
